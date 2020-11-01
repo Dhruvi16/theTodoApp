@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types';
-import { Mutation } from 'react-apollo';
-
+import PropTypes from 'prop-types'
+import { Mutation } from 'react-apollo'
 import {ADD_TODO, TODO} from './queries'
+import CanvasDraw from 'react-canvas-draw'
 
 const Modal = ({ children, closeModal, modalState, title }) => {
   if(!modalState) {
@@ -63,6 +63,7 @@ class AddTodo extends Component {
       todo: e.target.value
     });
   }
+
   handleSubmit = (addTodo) => {
     // call function to add a todo
     if (this.state.todo) {
@@ -85,6 +86,7 @@ class AddTodo extends Component {
         date: "",
         canvas: ""
       });
+      this.toggleModal()
     }
   }
   
@@ -185,7 +187,36 @@ class AddTodo extends Component {
           <div class="field">
             <label class="label">Add Canvas Element</label>
             <div class="control">
-              <input class="input" type="text" onChange={(e)=>this.setState({canvas: e.target.value})} value={this.state.canvas}></input>
+            <button
+            onClick={() => {
+              localStorage.setItem(
+                "savedDrawing",
+                this.saveableCanvas.getSaveData()
+              );
+            }}
+            class="button is-primary"
+          >
+            Save
+          </button>
+          <button
+            onClick={() => {
+              this.saveableCanvas.clear();
+            }}
+            class="button is-danger"
+          >
+            Clear
+          </button>
+          <button
+            onClick={() => {
+              this.saveableCanvas.undo();
+            }}
+            class="button is-danger"
+          >
+            Undo
+          </button>
+            <CanvasDraw
+          ref={canvasDraw => (this.saveableCanvas = canvasDraw)}
+        />
             </div>
           </div>
           <input class="button is-danger" type="submit"/>
