@@ -27,9 +27,9 @@ class App extends Component {
       isAuthenticated() && (
         <ApolloProvider client={client}>
         <div className="todo-app container">
-          <h1  className=" title center blue-text">Todo's</h1>
+          <h1  className="title has-text-centered mt-6">Todo's</h1>
           
-          <Button onClick={()=>window.open('logout',"_self")} variant="success" className="float-right">Logout</Button>
+          <Button onClick={()=>window.open('logout',"_self")} className="button is-danger float-right">Logout</Button>
           <br/><br/>
           <Todos deleteTodo={this.deleteTodo} />
           <AddTodo addTodo={this.addTodo} />

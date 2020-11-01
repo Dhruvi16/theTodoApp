@@ -22,7 +22,7 @@ const Todos = () => {
       
       
       <Alert key={id} color={done ? "success":"warning"}>
-      <span  key={todo.id} > '{todo}'--- Location: {location} --- Time:{time} {date}  <Del id={id} /> <Mark id={id} /> </span>
+      <span  key={todo.id} > '{todo}'--- Location: {location} --- Time: {time} {date}  <Del id={id} /> <Mark id={id} /> </span>
       </Alert>
 
       

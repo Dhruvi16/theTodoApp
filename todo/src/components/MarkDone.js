@@ -13,8 +13,8 @@ const Mark = (id) => {
   return (
     <Mutation mutation={MARK_DONE}>
         {(markdone, { data }) => (
-        <span data-toggle="tooltip" title="Delete Todo" className="float-right mt-n2" onClick={e=> {markdone({ variables: id, refetchQueries: [{ query: TODO }] })}}>
-          <Button variant="success"><MdDone/></Button>
+        <span data-toggle="tooltip" title="Mark done" className="float-right mt-n2" onClick={e=> {markdone({ variables: id, refetchQueries: [{ query: TODO }] })}}>
+          <Button className="button is-success"><MdDone/></Button>
          
         </span>
          )}
