@@ -23,6 +23,9 @@ export const TODO = gql`
   todo(order_by: {id: asc}){
     id
     todo
+    location
+    time
+    date
     done
   }
 }

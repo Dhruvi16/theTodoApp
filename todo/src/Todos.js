@@ -18,11 +18,11 @@ const Todos = () => {
       if (loading) return "Loading...";
       if (error) return (console.log(error));
       if (data.todo.length){
-    return data.todo.map(({ id, todo, done}) => (
+    return data.todo.map(({ id, todo, location, time, date, done}) => (
       
       
       <Alert key={id} color={done ? "success":"warning"}>
-      <span  key={todo.id} > {todo}  <Del id={id} /> <Mark id={id} /> </span>
+      <span  key={todo.id} > '{todo}'--- Location: {location} --- Time:{time} {date}  <Del id={id} /> <Mark id={id} /> </span>
       </Alert>
 
       

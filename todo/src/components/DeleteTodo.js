@@ -11,7 +11,7 @@ const Del = (id) => {
     <Mutation mutation={DEL_TODO}>
         {(deltodo, { data }) => (
         <span data-toggle="tooltip" title="Delete Todo" className="float-right mt-n2 ml-4" onClick={e=> {deltodo({ variables: id, refetchQueries: [{ query: TODO }] })}}>
-          <Button variant="danger">X</Button>
+          <Button class="button is-danger">X</Button>
          
         </span>
          )}
