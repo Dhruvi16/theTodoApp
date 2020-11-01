@@ -5,11 +5,12 @@ import {ApolloProvider} from "react-apollo"
 import Todos from "./Todos"
 import AddTodo from "./components/AddTodo"
 import Button from 'react-bootstrap/Button'
+import 'bulma/css/bulma.css'
 
 const ACCESS_TOKEN = localStorage.getItem('id_token');
 
 const client = new ApolloClient({
-  uri: "https://dhruvi-todo-app.herokuapp.com/v1/graphql",
+  uri: "",
   headers: {
     'Authorization': `Bearer ${ACCESS_TOKEN}`,
 }
@@ -32,7 +33,6 @@ class App extends Component {
           <br/><br/>
           <Todos deleteTodo={this.deleteTodo} />
           <AddTodo addTodo={this.addTodo} />
-          <div> ***completed task are green and incomplete are yellow***</div>
         </div>
         
         </ApolloProvider>

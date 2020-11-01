@@ -28,8 +28,8 @@ export const TODO = gql`
 }
 `
 export const ADD_TODO = gql`
-mutation AddTodo($todo: String!) {
-  insert_todo(objects:[{todo:$todo}]){
+mutation AddTodo($todo: String!, $location: String!, $date: String!, $time: String!, $canvas: String!) {
+  insert_todo(objects:[{todo:$todo, location:$location, date: $date, time: $time, canvas: $canvas}]){
     returning{
       id
     }

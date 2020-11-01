@@ -3,11 +3,7 @@ import auth0 from 'auth0-js';
 
 export default class Auth {
   auth0 = new auth0.WebAuth({
-    domain: "dev-evpssjfm.us.auth0.com",
-    clientID: "L4KxOmvlyl0DfXmQEkzS0lL6D8lVx0wZ",
-    redirectUri: "http://localhost:3000/callback",
-    responseType: 'token id_token',
-    scope: 'openid'
+
   });
 
   constructor() {

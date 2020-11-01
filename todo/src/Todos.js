@@ -31,7 +31,7 @@ const Todos = () => {
   
   }
       else{
-        return(<div> get some work boi...</div>
+        return(<div> </div>
           )
          }
       
