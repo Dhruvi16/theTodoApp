@@ -10,7 +10,7 @@ import 'bulma/css/bulma.css'
 const ACCESS_TOKEN = localStorage.getItem('id_token');
 
 const client = new ApolloClient({
-  uri: "https://dhruvi-todo-app.herokuapp.com/v1/graphql",
+  uri: "",
   headers: {
     'Authorization': `Bearer ${ACCESS_TOKEN}`,
 }
